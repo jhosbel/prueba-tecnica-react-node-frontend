@@ -1,50 +1,96 @@
-# React + TypeScript + Vite
+# Desafío React / MongoDB - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 📝 Introducción
 
-Currently, two official plugins are available:
+Este proyecto es la implementación del frontend para la prueba técnica "Desafío React / MongoDB". La aplicación permite consultar, mostrar y actualizar información de productos en una base de datos MongoDB mediante una API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tecnologías utilizadas
 
-## Expanding the ESLint configuration
+- React con Vite para una configuración rápida y optimizada.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- TypeScript para mejorar la robustez del código y facilitar su mantenibilidad.
 
-- Configure the top-level `parserOptions` property like this:
+- React Router para la gestión de rutas en la aplicación.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Tailwind CSS para estilizar la interfaz de manera rápida y eficiente.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- SweetAlert2 para mostrar alertas interactivas y amigables con el usuario.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## ⚙️ Instalación y ejecución del proyecto
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Para ejecutar el frontend de la aplicación localmente, sigue estos pasos:
+
+1. Clona el repositorio:
+    ```
+    git clone https://github.com/jhosbel/tu-repositorio.git
+    ```
+
+2. Accede al directorio del frontend:
+    ```
+    cd nombre-del-proyecto-frontend
+    ```
+3. Instala las dependencias necesarias:
+    ```
+    npm install
+    ```
+4. Crea un archivo `.env` en la raíz del proyecto y agrega la URL de la API backend:
+    ```
+    VITE_API_URL=http://localhost:5000
+    ```
+    (Asegúrate de reemplazar la URL con la dirección real de tu API si está desplegada.)
+
+5. Inicia el servidor de desarrollo:
+    ```
+    npm run dev
+    ```
+    Abre el navegador en `http://localhost:5173` (puede variar según tu configuración).
+
+## 📝 Justificación de elecciones técnicas
+
+1. TypeScript
+
+    Se eligió TypeScript en lugar de JavaScript para mejorar la calidad del código, proporcionando tipado estático, mejor autocompletado y prevención de errores en tiempo de desarrollo.
+
+2. Vite en lugar de Create React App
+
+    Vite ofrece un entorno de desarrollo más rápido y eficiente en comparación con CRA, optimizando la carga de módulos y reduciendo el tiempo de construcción.
+
+3. Tailwind CSS en lugar de CSS tradicional o Bootstrap
+
+    Tailwind facilita la creación de diseños responsivos y modulares sin necesidad de escribir archivos CSS adicionales.
+
+4. SweetAlert2 en lugar de alertas nativas
+
+    Proporciona una mejor experiencia de usuario con alertas personalizables y más atractivas.
+
+5. React Router
+
+    Se eligió React Router para manejar el enrutado de la aplicación y mejorar la navegación sin recargar la página.
+
+## 📂 Estructura del proyecto
+
+El proyecto sigue una organización modular para facilitar su mantenimiento y escalabilidad:
+
+    /frontend
+    ├── src
+    │   ├── api          # Módulos para interactuar con la API 
+    │   ├── components   # Componentes reutilizables
+    │   ├── interfaces   # Interfaces para tipar los datos
+    │   ├── App.tsx      # Componente principal de la aplicación
+    │   ├── main.tsx     # Punto de entrada de la aplicación
+    ├── .env             # Variables de entorno
+    ├── .gitignore       # Archivos y carpetas ignoradas por Git
+    ├── vite.config.ts   # Configuración de Vite
+    └── tsconfig.json    # Configuración de TypeScript
+
+## Funcionalidades implementadas
+
+- Visualización de productos obtenidos desde la API.
+
+- Actualización de precios especiales para ciertos usuarios.
+
+- Formulario de subida para agregar datos a la colección de precios especiales.
+
+- Navegación entre "Artículos" y "Subida".
+
+- Alertas personalizadas con SweetAlert2 para notificar acciones exitosas o errores.
