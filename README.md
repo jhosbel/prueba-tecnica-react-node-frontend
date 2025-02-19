@@ -22,7 +22,7 @@ Para ejecutar el frontend de la aplicación localmente, sigue estos pasos:
 
 1. Clona el repositorio:
     ```
-    git clone https://github.com/jhosbel/tu-repositorio.git
+    git clone https://github.com/jhosbel/prueba-tecnica-react-node-frontend.git
     ```
 
 2. Accede al directorio del frontend:
